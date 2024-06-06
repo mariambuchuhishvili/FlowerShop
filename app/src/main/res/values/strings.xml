@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">FlowerShop</string>
+    <string name="simpletext">Суперпупертекст!!!!</string>
+    <string name="icon_description">Иконка приложения в виде цветка</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about_text">О нас</string>
+    <string name="main_text">Главная</string>
+    <string name="flower_title">Flower</string>
+    <string name="shop_title">Shop</string>
+    <string name="filter_description">Фильтр</string>
+    <string name="rectangle_description">Прямоугольник с закругленными углами</string>
+    <string name="bouquet_description">Фотография букета цветов</string>
+    <string name="order">Добавить в корзину</string>
+</resources>
