@@ -16,6 +16,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.flowershop.model.Bouquet;
 import com.example.flowershop.model.Order;
 
 public class BouquetPage extends AppCompatActivity {
@@ -30,6 +31,12 @@ public class BouquetPage extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        TextView aboutTextView = findViewById(R.id.about);
+        aboutTextView.setOnClickListener(new MyOnClickListener(getCurrentFocus(),this, AboutActivity.class));
+        TextView contactsTextView = findViewById(R.id.contacts);
+        contactsTextView.setOnClickListener(new MyOnClickListener(getCurrentFocus(),this, ContactsActivity.class));
+        TextView mainTextView = findViewById(R.id.main_menu);
+        mainTextView.setOnClickListener(new MyOnClickListener(getCurrentFocus(),this,MainActivity.class));
 
         //Подставление данные под соответсвующие элементы
         ConstraintLayout background = findViewById(R.id.backgroundConstraintLayout);

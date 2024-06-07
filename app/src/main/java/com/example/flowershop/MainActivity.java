@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
     static List<Bouquet> bouquets = new ArrayList<>(); //Список использующийся в адаптере
     static List<Bouquet> fullBouquetsList = new ArrayList<>(); //Полный список букетов
 
+
     @SuppressLint("Range")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,12 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        Button orderButton = findViewById(R.id.orderButton);
+        orderButton.setOnClickListener(new MyOnClickListener(getCurrentFocus(),this, OrderPage.class));
+        TextView aboutTextView = findViewById(R.id.about);
+        aboutTextView.setOnClickListener(new MyOnClickListener(getCurrentFocus(),this, AboutActivity.class));
+        TextView contactsTextView = findViewById(R.id.contacts);
+        contactsTextView.setOnClickListener(new MyOnClickListener(getCurrentFocus(),this, ContactsActivity.class));
 
         //список категорий
         List<Category> categories = new ArrayList<>();
@@ -114,13 +123,13 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
     }
 
     //Отображение списка букетов
-    private void SetBouquetsTitles(List<Bouquet> goods) {
+    private void SetBouquetsTitles(List<Bouquet> bouquets) {
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL, false);
         bouquetRecyclerView = findViewById(R.id.bouquetsRecyclerView);
         bouquetRecyclerView.setLayoutManager(layoutManager);
 
-        bouquetAdapter = new BouquetAdapter(this, goods);
+        bouquetAdapter = new BouquetAdapter(this, bouquets);
         bouquetRecyclerView.setAdapter(bouquetAdapter);
     }
 
@@ -154,9 +163,6 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         bouquets.addAll(fullBouquetsList);
         bouquetAdapter.notifyDataSetChanged();
     }
-    //открытие страницы корзины
-    public void OpenOrderActivity(View v){
-        Intent intent = new Intent(this, OrderPage.class);
-        this.startActivity(intent);
-    }
+
+
 }

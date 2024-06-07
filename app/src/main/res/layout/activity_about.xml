@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/backgroundConstraintLayout"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/shop_title"
-    tools:context=".BouquetPage">
+    android:background="@color/white"
+    tools:context=".AboutActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -49,7 +49,7 @@
             android:id="@+id/about"
             android:layout_width="100dp"
             android:layout_height="145dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center"
             android:rotation="-90"
             android:text="@string/about_text"
@@ -77,97 +77,54 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/bouquetImageView"
-        android:layout_width="0dp"
+    <TextView
+        android:id="@+id/flower_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/bouquet_description"
-        android:cropToPadding="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/flower_title"
+        android:textColor="@color/black"
+        android:textSize="40sp"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bouquet1"
-        android:transitionName="bouquetPhoto"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nameTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="center"
-        android:text="Название Название Название"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/bouquetImageView" />
-
-    <Button
-        android:id="@+id/priceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="20dp"
-        android:clickable="false"
-        android:fontFamily="@font/montserrat_bold"
-        android:paddingLeft="2dp"
-        android:paddingTop="0dp"
-        android:paddingRight="2dp"
-        android:paddingBottom="0dp"
-        android:text="1000.00 ₽"
-        android:textColor="@color/black"
-        android:textSize="10sp"
-        app:backgroundTint="@color/sidebar_background"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buyButton"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/descriptionCardView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:alwaysDrawnWithCache="true"
-        android:visibility="visible"
-        app:cardBackgroundColor="#40C8C8C8"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/priceButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/nameTextView">
-
-        <TextView
-            android:id="@+id/descriprionTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/montserrat"
-            android:text="Текст Текст Текст  Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:visibility="visible" />
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/buyButton"
+        android:id="@+id/shop_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/shop_title"
+        android:layout_marginTop="55dp"
         android:fontFamily="@font/montserrat"
-        android:onClick="AddToOrder"
-        android:text="@string/order"
-        android:textColor="@color/black"
-        android:textSize="12sp"
+        android:text="@string/shop_title"
+        android:textColor="@color/shop_title"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/flower_title"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/shop_title"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/priceButton" />
+        app:layout_constraintTop_toBottomOf="@id/flower_title">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+
+
+            android:text="Текст о цветочном магазине" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

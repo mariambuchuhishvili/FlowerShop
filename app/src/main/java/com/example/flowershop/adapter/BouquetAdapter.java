@@ -68,6 +68,7 @@ public class BouquetAdapter extends RecyclerView.Adapter<BouquetViewHolder> {
                 intent.putExtra("bouquetName",bouquetList.get(holder.getAdapterPosition()).getName());
                 intent.putExtra("bouquetBackground ", Color.parseColor(bouquetList.get(holder.getAdapterPosition()).getColor()));
                 intent.putExtra("bouquetDescription", bouquetList.get(holder.getAdapterPosition()).getDescription());
+                intent.putExtra("categoryIds", bouquetList.get(holder.getAdapterPosition()).getCategoryId());
                 
                 context.startActivity(intent,activityOptions.toBundle());
             }

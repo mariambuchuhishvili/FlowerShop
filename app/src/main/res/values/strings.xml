@@ -11,4 +11,6 @@
     <string name="rectangle_description">Прямоугольник с закругленными углами</string>
     <string name="bouquet_description">Фотография букета цветов</string>
     <string name="order">Добавить в корзину</string>
+    <string name="site">flowershop.ru</string>
+    <string name="vk">\@flowershopvk</string>
 </resources>
