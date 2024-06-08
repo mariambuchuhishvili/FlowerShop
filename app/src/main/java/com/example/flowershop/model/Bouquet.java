@@ -1,5 +1,7 @@
 package com.example.flowershop.model;
 
+import java.util.List;
+
 public class Bouquet {
     // описание букета
     int id;
